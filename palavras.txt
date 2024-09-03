@@ -1,0 +1,83 @@
+9
+9 FRUTAS
+Manga
+Maca
+banana
+Uva
+Abacaxi
+limao
+Laranja
+Morango
+melancia
+8 CORES
+Azul
+Vermelho
+Verde
+Amarelo
+Roxo
+Laranja
+Preto
+Branco
+10 ANIMAIS
+Leao
+Tigre
+Elefante
+Girafa
+Zebra
+Gato
+Cachorro
+Papagaio
+Golfinho
+Urso
+7 PAISES
+Brasil
+Estados Unidos
+Japao
+Franca
+Australia
+Canada
+Alemanha
+6 ESPORTES
+Futebol
+Basquete
+Volei
+Tenis
+Natacao
+Atletismo
+12 VEICULOS
+Carro
+Bicicleta
+Onibus
+Aviao
+Moto
+Trem
+Barco
+Navio
+Caminhao
+Helicoptero
+Trator
+Patinete
+5 MUSICAS
+Rock
+Pop
+Jazz
+Classica
+Eletronica
+9 LUGARES
+Praia
+Montanha
+Floresta
+Deserto
+Cidade
+Campo
+Ilha
+Caverna
+Vulcao
+7 COMIDAS
+Pizza
+Hamburguer
+Sushi
+Salada
+Feijoada
+Macarrao
+Taco
