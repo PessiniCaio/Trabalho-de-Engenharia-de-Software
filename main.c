@@ -4,12 +4,14 @@
 #include <ctype.h>
 #include <time.h>
 
+// Funcão para definir um tema e uma palavra para a forca
 void palavra_chave_usu(char *palavra, char *tema) {
    strcpy(tema, "ComIda");
    strcpy(palavra, "maca");
    printf("\n");
 }
 
+// Função para escolher aleatoriamente uma palavra do arquivo e seu respectivo tema
 void palavra_chave_pre(char *palavra, char *tema) {
    int num_temas;
    char buffer[256];
@@ -83,6 +85,7 @@ int main() {
             printf("Opção inválida\n\n");
       } while (i != 1 && i != 2 && i != 3);
 
+      // Define o tamanho da palavra
       int palavra_length = strlen(palavra);
    
       for (i = 0; i < palavra_length; i++) {
@@ -91,8 +94,10 @@ int main() {
          } else {
             resposta[i] = '_';
          }
+         // Coloca todas as letras em caixa alta
          palavra[i] = toupper(palavra[i]);
       }
+      // Fim da palavra
       resposta[palavra_length] = '\0';
    
       for (i = 0; i < strlen(tema); i++) {
