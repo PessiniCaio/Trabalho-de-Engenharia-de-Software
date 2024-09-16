@@ -1,4 +1,4 @@
-9
+10
 9 FRUTAS
 Manga
 Maca
@@ -81,3 +81,13 @@ Salada
 Feijoada
 Macarrao
 Taco
+9 OBJETO
+Colher
+Óculos
+Chuteira
+Tesoura
+Televisao
+Cadeira
+Chave
+Garrafa
+Lampada
