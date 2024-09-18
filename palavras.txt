@@ -1,4 +1,4 @@
-10
+11
 9 FRUTAS
 Manga
 Maca
@@ -91,3 +91,24 @@ Cadeira
 Chave
 Garrafa
 Lampada
+20 DESENHO
+O Incrivel Mundo de Gumball
+Os Simpsons
+Family Guy
+South Park
+Scooby Doo
+Caverna do Dragao
+Os Flinstones
+He-Man
+Corrida Maluca
+Thundercats
+Tom e Jerry
+Looney Tunes
+Pica Pau
+Pokemon
+Dragon Ball Z
+Cavaleiros dos Zodiaco
+Bob Esponja
+Os Padrinhos Magicos
+Doug
+O laboratorio de Dexter
