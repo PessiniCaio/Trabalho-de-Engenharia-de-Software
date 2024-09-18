@@ -74,11 +74,11 @@ int main() {
             palavra_chave_pre(palavra, tema);
             break;
          }
-         if (i == 2) {
+         else if (i == 2) {
             palavra_chave_usu(palavra, tema);
             break;
          }
-         if (i == 3) {
+         else if (i == 3) {
             exit(1);
          }
          else
@@ -107,14 +107,13 @@ int main() {
       strcpy(letras, "");
    
       while (strcmp(palavra, resposta) != 0) {
-         printf("TEMA: %s\n\n", tema);
-         printf("Letras digitadas: %s\n\n", letras);
-         printf("Palavra: ");
+         printf("TEMA: %s\n\n"
+               "Letras digitadas: %s\n\n"
+               "Palavra: ", tema, letras);
          for (i = 0; i < palavra_length; i++) {
             printf(" %c", resposta[i]);
          }
-         printf("\n\n");
-         printf("Digite uma letra: ");
+         printf("\n\nDigite uma letra: ");
          scanf(" %c", &letra);
          letra = toupper(letra);
          strncat(letras, &letra, 1);
@@ -138,37 +137,37 @@ int main() {
                   "|       \n"
                   "|       \n"
                   "|_____  \n");
-            if (tentativas == 2)
+            else if (tentativas == 2)
                printf("_____\n"
                   "|   |   \n"
                   "|   O   \n"
                   "|  /    \n"
                   "|       \n"
                   "|_____  \n");
-            if (tentativas == 3)
+            else if (tentativas == 3)
                printf("_____\n"
                   "|   |   \n"
                   "|   O   \n"
                   "|  /|   \n"
                   "|       \n"
                   "|_____  \n");
-            if (tentativas == 4)
+            else if (tentativas == 4)
                printf("_____\n"
                   "|   |   \n"
                   "|   O   \n"
                   "|  /|\\ \n"
                   "|       \n"
                   "|_____  \n");
-            if (tentativas == 5)
+            else if (tentativas == 5)
                printf("_____\n"
                   "|   |   \n"
                   "|   O   \n"
                   "|  /|\\ \n"
                   "|  /    \n"
                   "|_____  \n");
-            if (tentativas >= 6) {
-               printf("\nVoce perdeu!\n");
-               printf("_____\n"
+            else {
+               printf("\nVoce perdeu!\n"
+                  "_____\n"
                   "|   |   \n"
                   "|   O   \n"
                   "|  /|\\ \n"
