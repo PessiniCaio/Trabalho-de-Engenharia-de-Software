@@ -12,16 +12,32 @@ O projeto é composto pelos seguintes arquivos:
 ### palavras.txt
 - A primeira linha contém o número total de temas
 - Cada tema é seguido pela quantidade de palavras e a lista das palavras associadas ao tema.
-## Funcionalidades Implementadas
+## Requisitos de Software
+### Funcionalidades Implementadas
 - Escolha de palavras aleatórias com base em um tema.
 - Interface de usuário para adivinhar letras e ver o progresso da palavra.
 - Sistema de tentativas com representação visual de enforcamento.
+### Requisitos funcionais
+- O sistema deve permitir que o usuário escolha entre uma palavra aleatória e uma palavra específica.
+- O jogador deve ver o progresso de suas tentativas e as letras já digitadas.
+- O enforcado deve ser exibido após erros, indicando o número de tentativas restantes.
+### Requisitos não funcionais
+- O jogo deve ser eficiente e rodar sem travamentos.
+- O código deve ser portável, compilável em diferentes sistemas operacionais que suportem a linguagem de programação C.
+- A interface deve ser simples e intuitiva para garantir uma boa experiência de usuário.
+### Análise e Design de Software
+- O design do sistema foi realizado de forma modular, separando funções como a escolha da palavra e o gerenciamento de tentativas, o que facilita a manutenção e a extensão do código.
+- O projeto utiliza uma abordagem estruturada, onde cada função tem responsabilidades claras, garantindo que o fluxo do jogo seja fácil de seguir e testar.
+### Teste de Software
+- Foram realizados **testes de unidade** nas funções principais para garantir que a escolha de palavras e o controle das tentativas funcionem corretamente.
+- Testes de integração foram feitos para validar o fluxo completo do jogo, desde a escolha da palavra até a visualização do enforcado e o resultado final.
+- O sistema foi validado através de testes de caixa preta, onde o foco foi verificar se o jogo atende aos requisitos funcionais sem observar o código.
 ## Como Executar o Projeto
 1. Certifique-se de ter um compilador C instalado (como GCC).
 2. Compile o código usando o comando: gcc -o forca main.c
 3. Execute o programa com o comando: ./forca
 4. Sigas as instruções no terminal para jogar
-## Requisitos
+## Requisitos técnicos
 - Compilador C: GCC ou equivalente
 - Arquivo de palavras: Certifique-se de que o arquivo **palavras.txt** esteja no mesmo diretório que o executável.
 ## Contribuição e Colaboração
