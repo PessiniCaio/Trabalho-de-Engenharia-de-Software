@@ -15,8 +15,9 @@ Ferramentas de Controle de Versão: Git e GitHub
 
 Como Executar o Projeto:
 1. Baixe o repositório -> https://github.com/PessiniCaio/Trabalho-de-Engenharia-de-Software/tree/main
-2. Acesse a pasta do projeto -> "cd 'caminho\nome-da-pasta'"
+2. Acesse a pasta do projeto -> "cd C:/.../nome-da-pasta"
 3. Compile e execute o código -> "gcc main.c -o forca"
+4. Execute o programa com o comando: "./forca"
 
 Como Jogar:
 1. Inicie o jogo e insira uma letra por vez.
