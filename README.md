@@ -29,4 +29,4 @@ Este projeto é um jogo de forca desenvolvido em C como parte de um trabalho de 
 - Rafael de Oliveira Pereira - Revisão, Teste e Documentação
 
 ## Documentação Adicional
-- Confira o arquivo DOCUMENTATION.md para mais detalhes sobre a estrutura do código e dependências.
+- Confira o arquivo **DOCUMENTATION.md** para mais detalhes sobre a estrutura do código e dependências.
