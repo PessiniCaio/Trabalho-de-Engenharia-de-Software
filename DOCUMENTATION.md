@@ -30,7 +30,7 @@ O projeto é composto pelos seguintes arquivos:
 - O projeto utiliza uma abordagem estruturada, onde cada função tem responsabilidades claras, garantindo que o fluxo do jogo seja fácil de seguir e testar.
 ### Teste de Software
 - Foram realizados **testes de unidade** nas funções principais para garantir que a escolha de palavras e o controle das tentativas funcionem corretamente.
-- Testes de integração foram feitos para validar o fluxo completo do jogo, desde a escolha da palavra até a visualização do enforcado e o resultado final.
+- Testes de integração foram feitos para validar o fluxo completo do jogo, desde a escolha da palavra até a visualização do boneco enforcado e o resultado final.
 - O sistema foi validado através de testes de caixa preta, onde o foco foi verificar se o jogo atende aos requisitos funcionais sem observar o código.
 ## Como Executar o Projeto
 1. Certifique-se de ter um compilador C instalado (como GCC).
@@ -41,6 +41,6 @@ O projeto é composto pelos seguintes arquivos:
 - Compilador C: GCC ou equivalente
 - Arquivo de palavras: Certifique-se de que o arquivo **palavras.txt** esteja no mesmo diretório que o executável.
 ## Contribuição e Colaboração
-Este projeto foi desenvolvido em colaboração entre Blendhon Pontini Delfino, Caio Pessini Dias e Rafael Pereira Oliveira. O código foi versionado utilizando o GitHub, e as contribuições foram gerenciadas através de issues e pull requests para facilitar a colaboração.
+Este projeto foi desenvolvido em colaboração entre Blendhon Pontini Delfino, Caio Pessini Dias e Rafael Pereira Oliveira. O código foi versionado utilizando o GitHub, e as contribuições foram gerenciadas através de commits e pull requests para facilitar a colaboração.
 ## Considerações Finais
 Este trabalho proporcionou uma prática no uso de controle de versão e na documentação de projetos de software, essenciais em ambientes de desenvolvimento colaborativos. Aprendemos a importância de commits frequentes e documentados, bem como a organização do repositório para facilitar a navegação e manutenção do código.
