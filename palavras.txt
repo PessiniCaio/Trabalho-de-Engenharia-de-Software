@@ -1,5 +1,5 @@
 11
-9 FRUTAS
+11 FRUTAS
 Manga
 Maca
 banana
@@ -9,6 +9,8 @@ limao
 Laranja
 Morango
 melancia
+Goiaba
+Acerola
 8 CORES
 Azul
 Vermelho
@@ -29,7 +31,7 @@ Cachorro
 Papagaio
 Golfinho
 Urso
-7 PAISES
+10 PAISES
 Brasil
 Estados Unidos
 Japao
@@ -37,6 +39,9 @@ Franca
 Australia
 Canada
 Alemanha
+Russia
+Portugal
+Africa do Sul
 6 ESPORTES
 Futebol
 Basquete
