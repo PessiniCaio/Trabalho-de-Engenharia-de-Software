@@ -50,7 +50,7 @@ void palavra_chave_pre(char *palavra, char *tema) {
                strcpy(palavra, buffer);
                break;
             }
-            palavra_atual++;
+            palavra_atual++; 
          }
          break;
       }
@@ -150,7 +150,7 @@ int main() {
             tentativas++;
    
             // Exibe a evolução do boneco na forca a cada erro
-            if (tentativas == 1)
+            if (tentativas == 1) //TENTATIVA 1
                printf("_\n"
                   "|   |   \n"
                   "|   O   \n"
