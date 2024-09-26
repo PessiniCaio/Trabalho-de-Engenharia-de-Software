@@ -4,8 +4,9 @@
 #include <ctype.h>
 #include <time.h>
 
-// Funcão para definir um tema e uma palavra para a forca
+// Função para definir um tema e uma palavra específica escolhida pelo usuário
 void palavra_chave_usu(char *palavra, char *tema) {
+   // Define o tema e a palavra
    strcpy(tema, "ComIda");
    strcpy(palavra, "maca");
    printf("\n");
@@ -17,6 +18,7 @@ void palavra_chave_pre(char *palavra, char *tema) {
    char buffer[256];
    srand(time(NULL));
 
+   // Abre o arquivo de palavras
    FILE *arquivo = fopen("palavras.txt", "r");
    if (arquivo == NULL) {
       perror("--------------------------------------------------\n\n"
@@ -24,19 +26,25 @@ void palavra_chave_pre(char *palavra, char *tema) {
       exit(1);
    }
 
+   // Lê a quantidade de temas presentes no arquivo
    fscanf(arquivo, "%d\n", &num_temas);
 
+   // Escolhe um tema aleatório
    int tema_ale = rand() % num_temas;
    int tema_atual = 0;
    int num_palavras;
 
+   // Lê o arquivo até encontrar o tema sorteado
    while (fscanf(arquivo, "%d %s\n", &num_palavras, tema) != EOF) {
       if (tema_atual == tema_ale) {
+         // Sorteia uma palavra aleatória do tema selecionado
          int palavra_ale = rand() % num_palavras;
          int palavra_atual = 0;
 
+         // Lê as palavras do tema até encontrar a sorteada
          while (fgets(buffer, sizeof(buffer), arquivo) != NULL && palavra_atual < num_palavras) {
             if (palavra_atual == palavra_ale) {
+               // Remove o '\n' do final da string e copia a palavra sorteada
                buffer[strcspn(buffer, "\n")] = '\0';
                strcpy(palavra, buffer);
                break;
@@ -46,6 +54,7 @@ void palavra_chave_pre(char *palavra, char *tema) {
          break;
       }
 
+      // Pula as palavras do tema atual se o tema não for o sorteado
       for (int i = 0; i < num_palavras; i++) {
          fgets(tema, sizeof(buffer), arquivo);
       }
@@ -64,6 +73,7 @@ int main() {
    int i = 0, found, tentativas = 0;
 
    while (1) {
+      // Menu inicial para o jogador escolher entre palavra aleatória, palavra definida ou sair
       do {
          printf("-------------------------------------------------\n\n"
             "Digite 1 para jogar com a palavra chave aleatoria\n"
@@ -85,27 +95,29 @@ int main() {
             printf("Opção inválida\n\n");
       } while (i != 1 && i != 2 && i != 3);
 
-      // Define o tamanho da palavra
+      // Define o tamanho da palavra escolhida
       int palavra_length = strlen(palavra);
    
+      // Inicializa a variável resposta com '_' para cada letra da palavra
       for (i = 0; i < palavra_length; i++) {
          if (palavra[i] == ' ') {
             resposta[i] = ' ';
          } else {
             resposta[i] = '_';
          }
-         // Coloca todas as letras em caixa alta
          palavra[i] = toupper(palavra[i]);
       }
-      // Fim da palavra
       resposta[palavra_length] = '\0';
-   
+
+      // Coloca o tema em maiúsculas
       for (i = 0; i < strlen(tema); i++) {
          tema[i] = toupper(tema[i]);
       }
 
+      // Inicializa a string de letras digitadas como vazia
       strcpy(letras, "");
    
+      // Loop do jogo até que o jogador adivinhe a palavra
       while (strcmp(palavra, resposta) != 0) {
          printf("TEMA: %s\n\n"
                "Letras digitadas: %s\n\n"
@@ -130,6 +142,7 @@ int main() {
             printf("\nLetra incorreta!\n");
             tentativas++;
    
+            // Exibe a evolução do boneco na forca a cada erro
             if (tentativas == 1)
                printf("_____\n"
                   "|   |   \n"
@@ -166,6 +179,7 @@ int main() {
                   "|  /    \n"
                   "|_____  \n");
             else {
+               // Perdeu o jogo após 6 erros
                printf("\nVoce perdeu!\n"
                   "_____\n"
                   "|   |   \n"
