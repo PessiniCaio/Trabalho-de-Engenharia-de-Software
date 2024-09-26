@@ -25,6 +25,17 @@ O projeto é composto pelos seguintes arquivos:
 - O jogo deve ser eficiente e rodar sem travamentos.
 - O código deve ser portável, compilável em diferentes sistemas operacionais que suportem a linguagem de programação C.
 - A interface deve ser simples e intuitiva para garantir uma boa experiência de usuário.
+### Requisitos técnicos
+- Linguagem: C
+- Compilador: GCC ou equivalente (versão mínima recomendada: GCC 9.3.0)
+### Bibliotecas Padrões
+- stdio.h (entrada e saída).
+- stdlib.h (funções como geração de números aleatórios).
+- string.h (manipulação de strings).
+### Ambiente de Desenvolvimento
+- Versão do compilador: gcc ou equivalente.
+### Sistema de Execução
+- O projeto é compatível com os sistemas operacionais Linux ou Windows.
 ### Análise e Design de Software
 - O design do sistema foi realizado de forma modular, separando funções como a escolha da palavra e o gerenciamento de tentativas, o que facilita a manutenção e a extensão do código.
 - O projeto utiliza uma abordagem estruturada, onde cada função tem responsabilidades claras, garantindo que o fluxo do jogo seja fácil de seguir e testar.
