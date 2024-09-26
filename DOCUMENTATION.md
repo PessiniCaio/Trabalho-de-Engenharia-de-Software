@@ -27,11 +27,12 @@ O projeto é composto pelos seguintes arquivos:
 - A interface deve ser simples e intuitiva para garantir uma boa experiência de usuário.
 ### Requisitos técnicos
 - Linguagem: C
-- Compilador: GCC ou equivalente (versão mínima recomendada: GCC 9.3.0)
 ### Bibliotecas Padrões
-- stdio.h (entrada e saída).
-- stdlib.h (funções como geração de números aleatórios).
-- string.h (manipulação de strings).
+- stdio.h: Para entrada e saída de dados.
+- stdlib.h: Para funções auxiliares, como geração de números aleatórios e alocação de memória.
+- string.h: Para manipulação de strings.
+- ctype.h: Para manipulação de caracteres (como converter para maiúsculas).
+- time.h: Para manipular o tempo, como gerar uma semente para números aleatórios baseada no tempo atual.
 ### Ambiente de Desenvolvimento
 - Versão do compilador: gcc ou equivalente.
 ### Sistema de Execução
