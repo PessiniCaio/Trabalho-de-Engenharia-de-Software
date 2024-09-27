@@ -157,7 +157,7 @@ int main() {
                   "|       \n"
                   "|       \n"
                   "|_____  \n");
-            else if (tentativas == 2)
+            else if (tentativas == 2) //TENTATIVA 2
                printf("_\n"
                   "|   |   \n"
                   "|   O   \n"
