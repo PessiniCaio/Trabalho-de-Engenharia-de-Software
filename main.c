@@ -57,7 +57,7 @@ void palavra_chave_pre(char *palavra, char *tema) {
 
       // Pula as palavras do tema atual se o tema não for o sorteado
       for (int i = 0; i < num_palavras; i++) {
-         fgets(tema, sizeof(buffer), arquivo);
+         fgets(buffer, sizeof(buffer), arquivo);
       }
 
       tema_atual++;
@@ -107,7 +107,7 @@ int main() {
          if (palavra[i] == ' ') {
             resposta[i] = ' '; // Mantém espaços em branco
          } else {
-            resposta[i] = ''; // Substitui letras por ''
+            resposta[i] = '_'; // Substitui letras por '_'
          }
          // Coloca todas as letras da palavra em maiúsculas
          palavra[i] = toupper(palavra[i]);
@@ -135,6 +135,7 @@ int main() {
          scanf(" %c", &letra);
          letra = toupper(letra); // Converte a letra para maiúscula
          strncat(letras, &letra, 1); // Adiciona a letra à lista de letras digitadas
+         strncat(letras, " ", 1); // Adiciona um espaço para separar as letras digitadas
    
          found = 0; // Reseta a variável found para verificar se a letra foi encontrada na palavra
          for (i = 0; i < palavra_length; i++) {
@@ -185,30 +186,29 @@ int main() {
                   "|  /|\\ \n"
                   "|  /    \n"
                   "|_____  \n");
-            else {
-               // Perdeu o jogo após 6 erros
-               printf("\nVoce perdeu!\n"
-                  "_\n"
+            else if (tentativas >= 6) // Game over
+               printf("_\n"
                   "|   |   \n"
                   "|   O   \n"
                   "|  /|\\ \n"
                   "|  / \\ \n"
-                  "|_____  \n");
-               return 0; // Sai do jogo
-            }
-            // Mostra o número de tentativas restantes
-            printf("Tentativas restantes: %d\n", 6 - tentativas);
+                  "|_____  \n\n"
+                  "Você foi enforcado!\n\n"
+                  "A palavra correta era: %s\n\n", palavra);
          }
-         printf("\n\n");      
+
+         // Se o jogador já errou 6 vezes, encerra o jogo
+         if (tentativas >= 6)
+            break;
       }
    
-      // Parabeniza o jogador por acertar a palavra
-      printf("Parabens! Voce acertou a palavra: %s\n", palavra);
-      printf("\n"
-         "   \\O/ \n"
-         "    |   \n"
-         "   / \\ \n"
-         " -------\n");
+      if (strcmp(palavra, resposta) == 0) {
+         printf("\nParabéns, você acertou a palavra: %s\n\n", palavra);
+      }
+
+      // Reseta as tentativas para o próximo jogo
+      tentativas = 0;
    }
-   return 0;
+
+   return 0;
 }
