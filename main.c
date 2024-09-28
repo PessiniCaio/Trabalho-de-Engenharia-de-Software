@@ -64,8 +64,62 @@ void palavra_chave_pre(char *palavra, char *tema) {
    }
 
    printf("\n");
-   
+
    fclose(arquivo); // Fecha o arquivo após a leitura
+}
+
+void forca(int erros, char palavra[50]) {
+   if (erros == 0)
+      printf("_\n"
+         "|   |   \n"
+         "|       \n"
+         "|       \n"
+         "|       \n"
+         "|_____  \n\n");
+   else if (erros == 1)
+      printf("_\n"
+         "|   |   \n"
+         "|   O   \n"
+         "|       \n"
+         "|       \n"
+         "|_____  \n\n");
+   else if (erros == 2)
+      printf("_\n"
+         "|   |   \n"
+         "|   O   \n"
+         "|  /    \n"
+         "|       \n"
+         "|_____  \n\n");
+   else if (erros == 3)
+      printf("_\n"
+         "|   |   \n"
+         "|   O   \n"
+         "|  /|   \n"
+         "|       \n"
+         "|_____  \n\n");
+   else if (erros == 4)
+      printf("_\n"
+         "|   |   \n"
+         "|   O   \n"
+         "|  /|\\ \n"
+         "|       \n"
+         "|_____  \n\n");
+   else if (erros == 5)
+      printf("_\n"
+         "|   |   \n"
+         "|   O   \n"
+         "|  /|\\ \n"
+         "|  /    \n"
+         "|_____  \n\n");
+   else if (erros >= 6) // Game over
+      printf("_\n"
+         "|   |   \n"
+         "|   O   \n"
+         "|  /|\\ \n"
+         "|  / \\ \n"
+         "|_____  \n\n"
+         "Você foi enforcado!\n\n"
+         "A palavra correta era: %s\n\n", palavra);
 }
 
 int main() { 
@@ -101,13 +155,13 @@ int main() {
 
       // Define o tamanho da palavra escolhida
       int palavra_length = strlen(palavra);
-   
+
       // Inicializa a variável resposta com '_' para cada letra da palavra
       for (i = 0; i < palavra_length; i++) {
          if (palavra[i] == ' ') {
             resposta[i] = ' '; // Mantém espaços em branco
          } else {
-            resposta[i] = '_'; // Substitui letras por '_'
+            resposta[i] = ''; // Substitui letras por ''
          }
          // Coloca todas as letras da palavra em maiúsculas
          palavra[i] = toupper(palavra[i]);
@@ -121,7 +175,7 @@ int main() {
 
       // Inicializa a string de letras digitadas como vazia
       strcpy(letras, "");
-   
+
       // Loop do jogo até que o jogador adivinhe a palavra
       while (strcmp(palavra, resposta) != 0) {
          // Mostra o tema, letras já digitadas e a palavra (com os caracteres adivinhados)
@@ -134,9 +188,19 @@ int main() {
          printf("\n\nDigite uma letra: ");
          scanf(" %c", &letra);
          letra = toupper(letra); // Converte a letra para maiúscula
+
+         // Verifica se a letra já foi digitada
+         if (strchr(letras, letra) != NULL) {
+            printf("\nVocê já digitou a letra %c. Tente outra.\n\n"
+               "-------------------------------------------------\n\n", letra);
+            forca(tentativas, palavra);
+            continue; // Se a letra já foi digitada, solicita nova entrada
+         }
+                  
          strncat(letras, &letra, 1); // Adiciona a letra à lista de letras digitadas
          strncat(letras, " ", 1); // Adiciona um espaço para separar as letras digitadas
-   
+         printf("\n");
+         
          found = 0; // Reseta a variável found para verificar se a letra foi encontrada na palavra
          for (i = 0; i < palavra_length; i++) {
             if (toupper(palavra[i]) == letra) {
@@ -144,71 +208,34 @@ int main() {
                found = 1; // Marca que a letra foi encontrada
             }
          }
-   
+
          if (!found) {
             // Letra incorreta, aumenta o número de tentativas e desenha o boneco
-            printf("\nLetra incorreta!\n");
+            printf("-------------------------------------------------\n\n"
+               "Letra incorreta!\n");
             tentativas++;
-   
-            // Exibe a evolução do boneco na forca a cada erro
-            if (tentativas == 1) //TENTATIVA 1
-               printf("_\n"
-                  "|   |   \n"
-                  "|   O   \n"
-                  "|       \n"
-                  "|       \n"
-                  "|_____  \n");
-            else if (tentativas == 2) //TENTATIVA 2
-               printf("_\n"
-                  "|   |   \n"
-                  "|   O   \n"
-                  "|  /    \n"
-                  "|       \n"
-                  "|_____  \n");
-            else if (tentativas == 3)
-               printf("_\n"
-                  "|   |   \n"
-                  "|   O   \n"
-                  "|  /|   \n"
-                  "|       \n"
-                  "|_____  \n");
-            else if (tentativas == 4)
-               printf("_\n"
-                  "|   |   \n"
-                  "|   O   \n"
-                  "|  /|\\ \n"
-                  "|       \n"
-                  "|_____  \n");
-            else if (tentativas == 5)
-               printf("_\n"
-                  "|   |   \n"
-                  "|   O   \n"
-                  "|  /|\\ \n"
-                  "|  /    \n"
-                  "|_____  \n");
-            else if (tentativas >= 6) // Game over
-               printf("_\n"
-                  "|   |   \n"
-                  "|   O   \n"
-                  "|  /|\\ \n"
-                  "|  / \\ \n"
-                  "|_____  \n\n"
-                  "Você foi enforcado!\n\n"
-                  "A palavra correta era: %s\n\n", palavra);
          }
 
-         // Se o jogador já errou 6 vezes, encerra o jogo
+         // Exibe a evolução do boneco na forca a cada erro
+         forca(tentativas, palavra);
+         
+         // Verifica se o jogador perdeu o jogo
          if (tentativas >= 6)
             break;
       }
-   
+
       if (strcmp(palavra, resposta) == 0) {
-         printf("\nParabéns, você acertou a palavra: %s\n\n", palavra);
+         printf("-------------------------------------------------\n\n");
+         printf("Parabéns, você acertou a palavra: %s\n\n", palavra);
+         printf("   \\O/ \n"
+          "    |   \n"
+          "   / \\ \n"
+          " -------\n");
       }
 
       // Reseta as tentativas para o próximo jogo
       tentativas = 0;
    }
 
-   return 0;
+   return 0;
 }
