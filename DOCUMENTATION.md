@@ -8,6 +8,7 @@ O projeto é composto pelos seguintes arquivos:
 ### main.c
 - Função **palavras_chave_usu**: define um tema e uma palavra pré-determinada escolhida pelo usuário para o jogo.
 - Função **palavra_chave_pre**: escolhe aleatoriamente um tema e uma palavra de um arquivo externo **(palavras.txt)**. A escolha é feita através de números aleatórios baseados na quantidade de temas e palavras disponíveis.
+- Função **forca**: atualiza a interface do jogo a cada erro de letra que o usuário comete.
 - Função **main**: controla o fluxo principal do jogo, apresentando o menu inicial, gerenciando as tentativas, e exibindo o resultado final. As tentativas erradas são visualizadas com uma representação gráfica do enforcado.
 ### palavras.txt
 - A primeira linha contém o número total de temas
